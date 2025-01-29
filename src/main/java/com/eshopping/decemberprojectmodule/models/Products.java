@@ -1,16 +1,16 @@
 package com.eshopping.decemberprojectmodule.models;
 
 public class Products {
-    private long id;
+    private Long id;
     private String title;
     private String description;
-    private double price;
-    private long categoryId;
+    private Double price;
+    private Long categoryId;
 
     public Products() {
     }
 
-    public Products(long id, String title, String description, double price, long categoryId) {
+    public Products(Long id, String title, String description, Double price, Long categoryId) {
         this.id = id;
         this.title = title;
         this.description = description;

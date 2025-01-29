@@ -6,13 +6,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Category {
-    private long categoryId;
+    private Long categoryId;
     private String name;
 
     Category(){
 
     }
-    Category(long categoryId, String name){
+    Category(Long categoryId, String name){
         this.categoryId = categoryId;
         this.name = name;
     }
