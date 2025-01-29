@@ -3,16 +3,19 @@ package com.eshopping.decemberprojectmodule.models;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class Category {
-    private long categoryId;
+    private Long categoryId;
     private String name;
+    private List<Products> productsList;
 
-    Category(){
+    public Category(){
 
     }
-    Category(long categoryId, String name){
+    Category(Long categoryId, String name){
         this.categoryId = categoryId;
         this.name = name;
     }
