@@ -14,6 +14,7 @@ public class ProductsController {
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public static Products createProduct(@RequestBody Products product){
+        System.out.println
         Products response = productService.createProduct(product.getId(), product.getTitle(),
                 product.getDescription(), product.getPrice(), product.getImageUrl(), product.getCategory().getName());
         return response;
@@ -25,10 +26,20 @@ public class ProductsController {
         return products;
     }
 
+    @GetMapping("/products")
+    public static Products[] getAllProducts(){
+        Products[] productsList= productService.getAllProducts();
+        return productsList;
+    }
+
+
     public static void updateProduct(Products product){
 
     }
-    public static void deleteProductById(long productId){
 
+    @DeleteMapping("/products/{id}")
+    public static Products deleteProductById(@PathVariable("id") long id){
+        Products product = productService.deleteAProduct(id);
+        return product;
     }
 }

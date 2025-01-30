@@ -22,8 +22,10 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public List<Products> getAllProducts() {
-        return null;
+    public Products[] getAllProducts() {
+        Products[] response = new Products[2];
+               // restTemplate.getForObject("https://fakestoreapi.com/products", FakeStoreProductDto.class);
+        return response;
     }
 
     @Override
@@ -37,6 +39,14 @@ public class FakeStoreProductService implements ProductService{
         fakeStoreProductDto.setCategory(category);
         FakeStoreProductDto response = restTemplate.postForObject("https://fakestoreapi.com/products", fakeStoreProductDto ,FakeStoreProductDto.class);
         return response.getProducts();
+    }
+
+    @Override
+    public Products deleteAProduct(Long id) {
+        String url = "https://fakestoreapi.com/products/"+id;
+        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject(url, FakeStoreProductDto.class);
+        restTemplate.delete(url);
+        return fakeStoreProductDto.getProducts();
     }
 
 
