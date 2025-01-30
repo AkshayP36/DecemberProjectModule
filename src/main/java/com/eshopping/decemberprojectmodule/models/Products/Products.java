@@ -1,4 +1,5 @@
-package com.eshopping.decemberprojectmodule.models;
+package com.eshopping.decemberprojectmodule.models.Products;
+
 
 public class Products {
     private Long id;
@@ -67,5 +68,17 @@ public class Products {
         this.price = price;
         this.imageUrl = imageUrl;
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", category=" + category +
+                '}';
     }
 }

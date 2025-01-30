@@ -1,44 +1,47 @@
-package com.eshopping.decemberprojectmodule.controllers;
+package com.eshopping.decemberprojectmodule.controllers.Products;
 
-import com.eshopping.decemberprojectmodule.models.Products;
-import com.eshopping.decemberprojectmodule.services.ProductService;
+import com.eshopping.decemberprojectmodule.models.Products.Products;
+import com.eshopping.decemberprojectmodule.services.Products.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductsController {
-    private static ProductService productService;
+    private ProductService productService;
 
     public ProductsController(ProductService productService) {
         this.productService = productService;
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public static Products createProduct(@RequestBody Products product){
-        System.out.println
+//    @PostMapping("/products")
+    public Products createProduct(@RequestBody Products product){
         Products response = productService.createProduct(product.getId(), product.getTitle(),
                 product.getDescription(), product.getPrice(), product.getImageUrl(), product.getCategory().getName());
         return response;
     }
 
     @GetMapping("/products/{id}")
-    public static Products getProductById(@PathVariable("id") Long id){
+    public Products getProductById(@PathVariable("id") Long id){
         Products products = productService.getSingleProduct(id);
         return products;
     }
 
     @GetMapping("/products")
-    public static Products[] getAllProducts(){
+    public Products[] getAllProducts(){
         Products[] productsList= productService.getAllProducts();
         return productsList;
     }
 
 
-    public static void updateProduct(Products product){
-
+    @PutMapping("/products/{id}")
+    public Products updateProduct(@PathVariable("id") Long id, @RequestBody Products product){
+        Products response = productService.updateAProduct(id, product.getTitle(), product.getDescription(), product.getPrice(), product.getImageUrl(),
+                product.getCategory().getName());
+        return response;
     }
 
     @DeleteMapping("/products/{id}")
-    public static Products deleteProductById(@PathVariable("id") long id){
+    public Products deleteProductById(@PathVariable("id") long id){
         Products product = productService.deleteAProduct(id);
         return product;
     }

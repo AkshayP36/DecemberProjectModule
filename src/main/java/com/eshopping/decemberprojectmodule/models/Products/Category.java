@@ -1,20 +1,12 @@
-package com.eshopping.decemberprojectmodule.models;
+package com.eshopping.decemberprojectmodule.models.Products;
 
 import java.util.List;
 
 
 public class Category {
-    private Long categoryId;
+
     private String name;
     private List<Products> productsList;
-
-    public Long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
 
     public String getName() {
         return name;
@@ -32,11 +24,10 @@ public class Category {
         this.productsList = productsList;
     }
 
-    public Category(){
-
+    public Category() {
     }
-    Category(Long categoryId, String name){
-        this.categoryId = categoryId;
+
+    public Category(String name) {
         this.name = name;
     }
 }
