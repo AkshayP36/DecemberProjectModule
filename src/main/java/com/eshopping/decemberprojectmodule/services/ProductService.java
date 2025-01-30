@@ -9,5 +9,7 @@ public interface ProductService {
     Products[] getAllProducts();
     Products createProduct(Long id, String title, String description, Double price, String imageUrl, String category);
 
+    Products updateAProduct(Long id, String title, String description, Double price, String imageUrl, String category);
+
     Products deleteAProduct(Long id);
 }
