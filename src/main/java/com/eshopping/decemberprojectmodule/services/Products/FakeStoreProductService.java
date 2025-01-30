@@ -1,11 +1,9 @@
-package com.eshopping.decemberprojectmodule.services;
+package com.eshopping.decemberprojectmodule.services.Products;
 
-import com.eshopping.decemberprojectmodule.dto.FakeStoreProductDto;
-import com.eshopping.decemberprojectmodule.models.Products;
+import com.eshopping.decemberprojectmodule.dto.Products.FakeStoreProductDto;
+import com.eshopping.decemberprojectmodule.models.Products.Products;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @Service("fakeStoreProductService")
 public class FakeStoreProductService implements ProductService{

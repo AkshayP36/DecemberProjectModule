@@ -1,4 +1,4 @@
-package com.eshopping.decemberprojectmodule.controllers;
+package com.eshopping.decemberprojectmodule.controllers.Products;
 
 import org.springframework.web.bind.annotation.RestController;
 

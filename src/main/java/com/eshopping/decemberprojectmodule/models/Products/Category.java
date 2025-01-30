@@ -1,4 +1,4 @@
-package com.eshopping.decemberprojectmodule.models;
+package com.eshopping.decemberprojectmodule.models.Products;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.eshopping.decemberprojectmodule.dto;
+package com.eshopping.decemberprojectmodule.dto.Products;
 
-import com.eshopping.decemberprojectmodule.models.Category;
-import com.eshopping.decemberprojectmodule.models.Products;
+import com.eshopping.decemberprojectmodule.models.Products.Category;
+import com.eshopping.decemberprojectmodule.models.Products.Products;
 
 public class FakeStoreProductDto {
     private Long id;

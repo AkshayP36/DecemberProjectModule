@@ -1,7 +1,7 @@
-package com.eshopping.decemberprojectmodule.controllers;
+package com.eshopping.decemberprojectmodule.controllers.Products;
 
-import com.eshopping.decemberprojectmodule.models.Products;
-import com.eshopping.decemberprojectmodule.services.ProductService;
+import com.eshopping.decemberprojectmodule.models.Products.Products;
+import com.eshopping.decemberprojectmodule.services.Products.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
