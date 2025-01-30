@@ -12,10 +12,16 @@ public class FakeStoreUserDto {
     private Name name;
     private Address address;
     private String phone;
+    private String firstname;
+    private String lastname;
+    private String city;
+    private String street;
+    private Integer number;
+    private String zipcode;
+    private String lat;
+    private String longitude;
 
 
-    public FakeStoreUserDto() {
-    }
 
     public Long getId() {
         return id;
@@ -65,11 +71,78 @@ public class FakeStoreUserDto {
         this.phone = phone;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     public User getUserData() {
         User user = new User();
+        user.setId(this.id);
         user.setEmail(this.email);
         user.setUsername(this.username);
+        user.setName(this.name);
         user.setPhone(this.phone);
+        user.setAddress(this.address);
         return user;
     }
 

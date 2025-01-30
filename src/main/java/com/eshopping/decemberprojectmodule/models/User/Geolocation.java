@@ -1,15 +1,15 @@
 package com.eshopping.decemberprojectmodule.models.User;
 
 public class Geolocation {
-    private String latitude;
+    private String lat;
     private String longitude;
 
-    public String getLatitude() {
-        return latitude;
+    public String getLat() {
+        return lat;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setLat(String lat) {
+        this.lat = lat;
     }
 
     public String getLongitude() {
@@ -23,8 +23,8 @@ public class Geolocation {
     public Geolocation() {
     }
 
-    public Geolocation(String latitude, String longitude) {
-        this.latitude = latitude;
+    public Geolocation(String lat, String longitude) {
+        this.lat = lat;
         this.longitude = longitude;
     }
 }
