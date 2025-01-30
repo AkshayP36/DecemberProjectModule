@@ -7,6 +7,10 @@ import com.eshopping.decemberprojectmodule.models.User.Name;
 import com.eshopping.decemberprojectmodule.models.User.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class FakeStoreUserService implements UserService{
     private RestTemplate restTemplate;
@@ -75,6 +79,25 @@ public class FakeStoreUserService implements UserService{
         FakeStoreUserDto fakeStoreUserDto = restTemplate.getForObject("https://fakestoreapi.com/users/"+id, FakeStoreUserDto.class);
         restTemplate.delete("https://fakestoreapi.com/users/"+id);
         return fakeStoreUserDto.getUserData();
+    }
+
+
+    @Override
+    public List<User> getAllUsers() {
+        try {
+            // Fetch the list of users from the API
+            FakeStoreUserDto[] fakeStoreUsers = restTemplate.getForObject("https://fakestoreapi.com/users", FakeStoreUserDto[].class);
+            if (fakeStoreUsers != null) {
+                // Convert the array of FakeStoreUserDto to a list of User
+                return List.of(fakeStoreUsers).stream()
+                        .map(FakeStoreUserDto::getUserData) // Extract the User from FakeStoreUserDto
+                        .collect(Collectors.toList());
+            } else {
+                throw new RuntimeException("No users found");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error fetching users", e);
+        }
     }
 
 

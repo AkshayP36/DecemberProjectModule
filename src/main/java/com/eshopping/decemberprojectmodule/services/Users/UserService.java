@@ -7,6 +7,8 @@ import com.eshopping.decemberprojectmodule.models.User.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 
 public interface UserService {
        public User getAUser(Long id);
@@ -17,5 +19,6 @@ public interface UserService {
                             Integer number, String zipcode, Geolocation geolocation, String lat, String longitude, String phone);
 
        public User deleteAUser(Long id);
+       public List<User> getAllUsers();
 
 }

@@ -5,6 +5,8 @@ import com.eshopping.decemberprojectmodule.services.Users.FakeStoreUserService;
 import com.eshopping.decemberprojectmodule.services.Users.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     private UserService userService;
@@ -44,8 +46,10 @@ public class UserController {
         User response = userService.deleteAUser(id);
         return response;
     }
-    public User[] getAllUsers(){
-        return null;
+    @GetMapping("/users")
+    public List<User> getAllUsers(){
+        List<User> response = userService.getAllUsers();
+        return response;
     }
 
 }
