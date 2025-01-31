@@ -21,7 +21,7 @@ public class FakeStoreProductService implements ProductService{
 
     @Override
     public Products[] getAllProducts() {
-//        FakeStoreProductDto response =  restTemplate.getForObject("https://fakestoreapi.com/products", FakeStoreProductDto.class);
+        FakeStoreProductDto[] response =  restTemplate.getForObject("https://fakestoreapi.com/products", FakeStoreProductDto[].class);
 
 //        return response.getProducts();
         return null;

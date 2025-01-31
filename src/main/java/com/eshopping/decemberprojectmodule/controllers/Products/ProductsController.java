@@ -1,7 +1,10 @@
 package com.eshopping.decemberprojectmodule.controllers.Products;
 
+import com.eshopping.decemberprojectmodule.exceptions.Products.ProductNotFoundException;
 import com.eshopping.decemberprojectmodule.models.Products.Products;
 import com.eshopping.decemberprojectmodule.services.Products.ProductService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,9 +24,12 @@ public class ProductsController {
     }
 
     @GetMapping("/products/{id}")
-    public Products getProductById(@PathVariable("id") Long id){
+    public ResponseEntity<Products> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
         Products products = productService.getSingleProduct(id);
-        return products;
+        ResponseEntity<Products> response = new ResponseEntity<>(
+                products, HttpStatus.OK
+        );
+        return response;
     }
 
     @GetMapping("/products")
